@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>
+
+// ask street address
+show("Enter street address:")
+
+let streetAddress = ask("street address")
+
+    // ask city name
+show("Enter your city name:")
+
+let cityName = ask("city")
+
+// ask province name
+show("Enter province name:")
+
+let provinceName = ask("province")
+
+// postal code
+show("Enter postal code:")
+
+let postalCode = ask("postal code")
+
+// ask apartment address
+show("Do you have apartment number:")
+
+let apartmentAddress = askForChoice("postal code", options: ["Yes", "No"])
+
+if apartmentAddress == "Yes" {
+    show("Enter your apartment number: ")
+    let apartmentNumber = ask("#")
+    show(String(streetAddress) + " " + String(cityName) + " " + String(provinceName) + " " + String(postalCode) + " " + String(apartmentNumber))
+}
+else if apartmentAddress == "No"{
+    show(String(streetAddress) + " " + String(cityName) + " " + String(provinceName) + " " + String(postalCode))
+}
+
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{145, 891}</string>
+			<key>OriginalContent</key>
+			<string>show("What is your name?")
+
+let name = ask("Name")
+
+show("Hi " + name)
+</string>
+			<key>OriginalRange</key>
+			<string>{145, 71}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Answers.playgroundchapter/Pages/Text.playgroundpage/Contents.swift</string>
+</dict>
+</plist>
