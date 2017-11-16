@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// Created by: Kay Lin
+// Created on: 8th-Nov_2017
+// Created for: ICS3U
+// This program displays user's address
+
+func address(streetAddress: String, city: String, province: String, postalCodeIs: String, apartmentNumberIs: Int = 0) -&gt; String {
+    // address info
+    var returnedAddress : String
+    
+    if apartmentNumberIs != 0 {
+        returnedAddress = String(streetAddress) + " " +  String(city) + " " + String(province) + " " + String(postalCodeIs) + " " + String(apartmentNumberIs)
+    }
+    else {
+        returnedAddress = String(streetAddress) + " " +  String(city) + " " + String(province) + " " + String(postalCodeIs)
+    }
+    
+    return returnedAddress
+}
+
+// ask street address
+show("Enter street address:")
+var streetAddress = ask("street address")
+
+// ask city name
+show("Enter your city name:")
+var cityName = ask("city")
+
+// ask province name
+show("Enter province name:")
+var provinceName = ask("province")
+
+// postal code
+show("Enter postal code:")
+var postalCode = ask("postal code")
+
+// ask apartment address
+show("Do you have apartment number:")
+var apartmentAddress = askForChoice("postal code", options: ["Yes", "No"])
+var appartmentNumber : Int? = nil
+
+if apartmentAddress == "Yes" {
+    appartmentNumber = Int(ask("appartment number"))
+}
+
+var finalStreetAddress: String
+
+if appartmentNumber == nil {
+    finalStreetAddress = address(streetAddress: streetAddress, city: cityName, province: provinceName, postalCodeIs: postalCode)
+}
+else {
+    finalStreetAddress = address(streetAddress: streetAddress, city: cityName, province: provinceName, postalCodeIs: postalCode, apartmentNumberIs: appartmentNumber!)
+}
+
+show(finalStreetAddress)
+</string>
+			<key>ModifiedRange</key>
+			<string>{145, 1663}</string>
+			<key>OriginalContent</key>
+			<string>show("What is your name?")
+
+let name = ask("Name")
+
+show("Hi " + name)
+</string>
+			<key>OriginalRange</key>
+			<string>{145, 71}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Answers.playgroundchapter/Pages/Text.playgroundpage/Contents.swift</string>
+</dict>
+</plist>
